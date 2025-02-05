@@ -1,0 +1,123 @@
+import 'dart:async';
+
+import 'package:collection/collection.dart';
+
+import '/backend/schema/util/firestore_util.dart';
+
+import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+
+class BairrosRecord extends FirestoreRecord {
+  BairrosRecord._(
+    super.reference,
+    super.data,
+  ) {
+    _initializeFields();
+  }
+
+  // "nome" field.
+  String? _nome;
+  String get nome => _nome ?? '';
+  bool hasNome() => _nome != null;
+
+  // "municipioID" field.
+  String? _municipioID;
+  String get municipioID => _municipioID ?? '';
+  bool hasMunicipioID() => _municipioID != null;
+
+  // "municipio" field.
+  String? _municipio;
+  String get municipio => _municipio ?? '';
+  bool hasMunicipio() => _municipio != null;
+
+  // "stateCode" field.
+  String? _stateCode;
+  String get stateCode => _stateCode ?? '';
+  bool hasStateCode() => _stateCode != null;
+
+  // "bairroID" field.
+  String? _bairroID;
+  String get bairroID => _bairroID ?? '';
+  bool hasBairroID() => _bairroID != null;
+
+  void _initializeFields() {
+    _nome = snapshotData['nome'] as String?;
+    _municipioID = snapshotData['municipioID'] as String?;
+    _municipio = snapshotData['municipio'] as String?;
+    _stateCode = snapshotData['stateCode'] as String?;
+    _bairroID = snapshotData['bairroID'] as String?;
+  }
+
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('bairros');
+
+  static Stream<BairrosRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => BairrosRecord.fromSnapshot(s));
+
+  static Future<BairrosRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => BairrosRecord.fromSnapshot(s));
+
+  static BairrosRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      BairrosRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
+
+  static BairrosRecord getDocumentFromData(
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      BairrosRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'BairrosRecord(reference: ${reference.path}, data: $snapshotData)';
+
+  @override
+  int get hashCode => reference.path.hashCode;
+
+  @override
+  bool operator ==(other) =>
+      other is BairrosRecord &&
+      reference.path.hashCode == other.reference.path.hashCode;
+}
+
+Map<String, dynamic> createBairrosRecordData({
+  String? nome,
+  String? municipioID,
+  String? municipio,
+  String? stateCode,
+  String? bairroID,
+}) {
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'nome': nome,
+      'municipioID': municipioID,
+      'municipio': municipio,
+      'stateCode': stateCode,
+      'bairroID': bairroID,
+    }.withoutNulls,
+  );
+
+  return firestoreData;
+}
+
+class BairrosRecordDocumentEquality implements Equality<BairrosRecord> {
+  const BairrosRecordDocumentEquality();
+
+  @override
+  bool equals(BairrosRecord? e1, BairrosRecord? e2) {
+    return e1?.nome == e2?.nome &&
+        e1?.municipioID == e2?.municipioID &&
+        e1?.municipio == e2?.municipio &&
+        e1?.stateCode == e2?.stateCode &&
+        e1?.bairroID == e2?.bairroID;
+  }
+
+  @override
+  int hash(BairrosRecord? e) => const ListEquality()
+      .hash([e?.nome, e?.municipioID, e?.municipio, e?.stateCode, e?.bairroID]);
+
+  @override
+  bool isValidKey(Object? o) => o is BairrosRecord;
+}
