@@ -274,7 +274,7 @@ class _ListLocalidadesWidgetState extends State<ListLocalidadesWidget> {
                                               ParamType.String,
                                             ),
                                             'bairro': serializeParam(
-                                              bairroItem.nome,
+                                              bairroItem.bairroID,
                                               ParamType.String,
                                             ),
                                           }.withoutNulls,
@@ -335,7 +335,7 @@ class _ListLocalidadesWidgetState extends State<ListLocalidadesWidget> {
                                               ParamType.String,
                                             ),
                                             'bairro': serializeParam(
-                                              bairroItem.nome,
+                                              bairroItem.bairroID,
                                               ParamType.String,
                                             ),
                                           }.withoutNulls,

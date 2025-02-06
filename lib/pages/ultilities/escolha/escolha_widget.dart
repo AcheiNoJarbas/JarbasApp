@@ -99,7 +99,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
             alignment: const AlignmentDirectional(0.0, 1.0),
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -239,7 +239,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                         .nome,
                                                 municipioID:
                                                     listViewTodasMunicipiosRecord
-                                                        .municipioID,
+                                                        .reference.id,
                                               );
                                               safeSetState(() {});
                                             },
@@ -406,7 +406,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                       MuncipioSelecionadoStruct(
                                                     nome: pesquisaItem.nome,
                                                     municipioID: pesquisaItem
-                                                        .municipioID,
+                                                        .reference.id,
                                                   );
                                                   safeSetState(() {});
                                                 },
@@ -507,10 +507,10 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                   ),
                                                 ),
                                               ),
-                                              if (pesquisaItem.nome ==
+                                              if (pesquisaItem.municipioID ==
                                                   FFAppState()
                                                       .municipioSelected
-                                                      .nome)
+                                                      .municipioID)
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -541,7 +541,8 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed(

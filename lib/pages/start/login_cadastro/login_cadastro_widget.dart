@@ -565,7 +565,7 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                       }
 
                                                       context.goNamedAuth(
-                                                          'Home',
+                                                          'Inicio',
                                                           context.mounted);
                                                     },
                                                     text: 'Entrar',
@@ -718,7 +718,7 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'Home',
+                                                                        'Inicio',
                                                                         context
                                                                             .mounted);
                                                                   },
@@ -1326,7 +1326,7 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                           ));
 
                                                       context.goNamedAuth(
-                                                          'Home',
+                                                          'Inicio',
                                                           context.mounted);
                                                     },
                                                     text: 'Criar conta',
@@ -1479,7 +1479,7 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'Home',
+                                                                        'Inicio',
                                                                         context
                                                                             .mounted);
                                                                   },
