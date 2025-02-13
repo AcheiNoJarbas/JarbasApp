@@ -1,0 +1,1 @@
+ C:\\projetos\\JarbasApp\\.dart_tool\\flutter_build\\8d01da1f95a7af835a70756e378a086f\\native_assets.yaml: 
