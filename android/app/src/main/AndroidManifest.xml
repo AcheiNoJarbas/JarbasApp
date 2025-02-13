@@ -58,6 +58,9 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
+        <network-security-config android:resource="@xml/network_security_config"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
 
 
     </application>
