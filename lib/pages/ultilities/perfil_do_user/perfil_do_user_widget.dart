@@ -49,17 +49,17 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-          child: SizedBox(
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+          child: Container(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
-              alignment: const AlignmentDirectional(1.0, -1.0),
+              alignment: AlignmentDirectional(1.0, -1.0),
               children: [
                 Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -78,20 +78,20 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                       FlutterFlowTheme.of(context).primary,
                                       FlutterFlowTheme.of(context).tertiary
                                     ],
-                                    stops: const [0.0, 1.0],
-                                    begin: const AlignmentDirectional(0.0, -1.0),
-                                    end: const AlignmentDirectional(0, 1.0),
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
                                   ),
                                 ),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.network(
-                                      valueOrDefault<String>(
+                                      '${valueOrDefault<String>(
                                         valueOrDefault(
                                             currentUserDocument?.bannerUrl, ''),
                                         'https://i.pinimg.com/originals/30/4b/0b/304b0ba836f045e4fc04cf8f6391e991.jpg',
-                                      ),
+                                      )}',
                                       width: 200.0,
                                       height: 200.0,
                                       fit: BoxFit.cover,
@@ -100,9 +100,9 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                 ),
                               ),
                               Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -174,36 +174,36 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .tertiary
                                               ],
-                                              stops: const [0.0, 1.0],
-                                              begin: const AlignmentDirectional(
+                                              stops: [0.0, 1.0],
+                                              begin: AlignmentDirectional(
                                                   0.0, -1.0),
-                                              end: const AlignmentDirectional(0, 1.0),
+                                              end: AlignmentDirectional(0, 1.0),
                                             ),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(3.0),
+                                            padding: EdgeInsets.all(3.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 width: double.infinity,
                                                 height: double.infinity,
                                                 clipBehavior: Clip.antiAlias,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   shape: BoxShape.circle,
                                                 ),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: const Duration(
+                                                  fadeInDuration: Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: const Duration(
+                                                  fadeOutDuration: Duration(
                                                       milliseconds: 500),
                                                   imageUrl:
-                                                      valueOrDefault<String>(
+                                                      '${valueOrDefault<String>(
                                                     valueOrDefault(
                                                         currentUserDocument
                                                             ?.imageUrl,
                                                         ''),
                                                     'https://media.istockphoto.com/id/1332100919/vector/man-icon-black-icon-person-symbol.jpg?s=612x612&w=0&k=20&c=AVVJkvxQQCuBhawHrUhDRTCeNQ3Jgt0K1tXjJsFy1eg=',
-                                                  ),
+                                                  )}',
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -219,7 +219,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -289,7 +289,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                           Flexible(
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -317,14 +317,14 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                         ],
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(height: 8.0)),
+                                                        SizedBox(height: 8.0)),
                                                   ),
                                                 ),
                                                 Container(
                                                   width: 50.0,
                                                   height: 50.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.asset(
@@ -336,10 +336,10 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 16.0)),
+                                      ].divide(SizedBox(width: 16.0)),
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 20.0)),
+                                ].divide(SizedBox(height: 20.0)),
                               ),
                               SingleChildScrollView(
                                 child: Column(
@@ -348,7 +348,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -387,14 +387,14 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     .secondaryBackground,
                                             dense: false,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -408,8 +408,8 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text('ATENÇÃO'),
-                                                        content: const Text(
+                                                        title: Text('ATENÇÃO'),
+                                                        content: Text(
                                                             'Você será redirecionado para um atendimento humanizado no WhatsApp'),
                                                         actions: [
                                                           TextButton(
@@ -417,7 +417,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     false),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Cancelar'),
                                                           ),
                                                           TextButton(
@@ -425,7 +425,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     true),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Continuar'),
                                                           ),
                                                         ],
@@ -448,7 +448,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                         .secondary,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -486,7 +486,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     .secondaryBackground,
                                             dense: false,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                           ),
                                         ),
@@ -542,7 +542,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -556,7 +556,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                               child: Material(
                                                 color: Colors.transparent,
                                                 child: ListTile(
-                                                  leading: const Icon(
+                                                  leading: Icon(
                                                     Icons.house,
                                                     color: Colors.black,
                                                     size: 24.0,
@@ -596,7 +596,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                           .secondaryBackground,
                                                   dense: false,
                                                   contentPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                 ),
@@ -607,7 +607,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                       },
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -627,7 +627,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -662,14 +662,14 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     .secondaryBackground,
                                             dense: false,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -677,15 +677,15 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          Function() navigate = () {};
+                                          Function() _navigate = () {};
                                           var confirmDialogResponse =
                                               await showDialog<bool>(
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text('ATENÇÃO'),
-                                                        content: const Text(
+                                                        title: Text('ATENÇÃO'),
+                                                        content: Text(
                                                             'Você será desconectado da conta atual, continuar?'),
                                                         actions: [
                                                           TextButton(
@@ -693,7 +693,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     false),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Cancelar'),
                                                           ),
                                                           TextButton(
@@ -701,7 +701,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     true),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Confirmar'),
                                                           ),
                                                         ],
@@ -716,7 +716,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                             GoRouter.of(context)
                                                 .clearRedirectLocation();
 
-                                            navigate = () =>
+                                            _navigate = () =>
                                                 context.goNamedAuth(
                                                     'Inicio', context.mounted);
                                           } else {
@@ -731,7 +731,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                         .secondary,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -740,12 +740,12 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                             );
                                           }
 
-                                          navigate();
+                                          _navigate();
                                         },
                                         child: Material(
                                           color: Colors.transparent,
                                           child: ListTile(
-                                            leading: const Icon(
+                                            leading: Icon(
                                               Icons.logout_outlined,
                                               color: Color(0xFFFD0004),
                                               size: 24.0,
@@ -769,14 +769,14 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     .secondaryBackground,
                                             dense: false,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -789,8 +789,8 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text('ATENÇÃO'),
-                                                        content: const Text(
+                                                        title: Text('ATENÇÃO'),
+                                                        content: Text(
                                                             'Você será redirecionado para uma pagina web'),
                                                         actions: [
                                                           TextButton(
@@ -798,7 +798,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     false),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Cancelara'),
                                                           ),
                                                           TextButton(
@@ -806,7 +806,7 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     true),
-                                                            child: const Text(
+                                                            child: Text(
                                                                 'Confirmar'),
                                                           ),
                                                         ],
@@ -838,14 +838,14 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 8.0))
-                                      .addToEnd(const SizedBox(height: 24.0)),
+                                      .divide(SizedBox(height: 8.0))
+                                      .addToEnd(SizedBox(height: 24.0)),
                                 ),
                               ),
                             ]
-                                .divide(const SizedBox(height: 30.0))
-                                .addToStart(const SizedBox(height: 24.0))
-                                .addToEnd(const SizedBox(height: 24.0)),
+                                .divide(SizedBox(height: 30.0))
+                                .addToStart(SizedBox(height: 24.0))
+                                .addToEnd(SizedBox(height: 24.0)),
                           ),
                         ),
                       ),
@@ -853,20 +853,20 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Container(
                     width: double.infinity,
                     height: 86.81,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0x00FFFFFF),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: wrapWithModel(
                         model: _model.navBarModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: const NavBarWidget(
+                        child: NavBarWidget(
                           tela: 4,
                         ),
                       ),

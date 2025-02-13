@@ -50,11 +50,11 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 50.0, 10.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(10.0, 50.0, 10.0, 0.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -66,8 +66,8 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                       borderColor: Colors.transparent,
                       borderRadius: 8.0,
                       buttonSize: 40.0,
-                      fillColor: const Color(0x345A5151),
-                      icon: const Icon(
+                      fillColor: Color(0x345A5151),
+                      icon: Icon(
                         Icons.arrow_back_sharp,
                         color: Colors.black,
                         size: 24.0,
@@ -93,8 +93,8 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                         borderColor: Colors.transparent,
                         borderRadius: 8.0,
                         buttonSize: 40.0,
-                        fillColor: const Color(0x345A5151),
-                        icon: const Icon(
+                        fillColor: Color(0x345A5151),
+                        icon: Icon(
                           Icons.arrow_back_sharp,
                           color: Colors.black,
                           size: 24.0,
@@ -107,7 +107,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -120,7 +120,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                    ].divide(const SizedBox(width: 15.0)),
+                    ].divide(SizedBox(width: 15.0)),
                   ),
                 ),
                 Row(
@@ -165,7 +165,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: StreamBuilder<List<ContratacoesRecord>>(
                         stream: queryContratacoesRecord(),
                         builder: (context, snapshot) {
@@ -173,8 +173,8 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
+                                width: 40.0,
+                                height: 40.0,
                                 child: CircularProgressIndicator(
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                     FlutterFlowTheme.of(context).primary,
@@ -205,7 +205,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                                         .toList();
 
                                 return ListView.separated(
-                                  padding: const EdgeInsets.fromLTRB(
+                                  padding: EdgeInsets.fromLTRB(
                                     0,
                                     10.0,
                                     0,
@@ -215,7 +215,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                                   scrollDirection: Axis.vertical,
                                   itemCount: contratacaoItem.length,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 15.0),
+                                      SizedBox(height: 15.0),
                                   itemBuilder: (context, contratacaoItemIndex) {
                                     final contratacaoItemItem =
                                         contratacaoItem[contratacaoItemIndex];
@@ -248,7 +248,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 100.0,
@@ -262,7 +262,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                                 _model.simpleSearchResults.toList();
 
                             return ListView.separated(
-                              padding: const EdgeInsets.fromLTRB(
+                              padding: EdgeInsets.fromLTRB(
                                 0,
                                 10.0,
                                 0,
@@ -272,7 +272,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: contratacao.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 15.0),
+                                  SizedBox(height: 15.0),
                               itemBuilder: (context, contratacaoIndex) {
                                 final contratacaoItem =
                                     contratacao[contratacaoIndex];
@@ -302,7 +302,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                       ),
                     ),
                   ),
-              ].divide(const SizedBox(height: 15.0)),
+              ].divide(SizedBox(height: 15.0)),
             ),
           ),
         ),

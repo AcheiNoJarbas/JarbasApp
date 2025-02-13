@@ -65,7 +65,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: SizedBox(
+              child: Container(
                 width: 200.0,
                 child: TextFormField(
                   controller: _model.textController,
@@ -128,7 +128,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
             ),
           ],
         ),
-      ].divide(const SizedBox(height: 10.0)),
+      ].divide(SizedBox(height: 10.0)),
     );
   }
 }

@@ -57,7 +57,7 @@ class _CardContratacaoWidgetState extends State<CardContratacaoWidget> {
         width: MediaQuery.sizeOf(context).width * 1.0,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -73,7 +73,7 @@ class _CardContratacaoWidgetState extends State<CardContratacaoWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(5.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +123,7 @@ class _CardContratacaoWidgetState extends State<CardContratacaoWidget> {
                   ),
                 ],
               ),
-            ].divide(const SizedBox(width: 15.0)),
+            ].divide(SizedBox(width: 15.0)),
           ),
         ),
       ),

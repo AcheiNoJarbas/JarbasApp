@@ -38,11 +38,11 @@ class _ListaVaziaWidgetState extends State<ListaVaziaWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.transparent,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+        padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +71,7 @@ class _ListaVaziaWidgetState extends State<ListaVaziaWidget> {
                     letterSpacing: 0.0,
                   ),
             ),
-          ].divide(const SizedBox(height: 16.0)),
+          ].divide(SizedBox(height: 16.0)),
         ),
       ),
     );

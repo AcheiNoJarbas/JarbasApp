@@ -57,7 +57,7 @@ class _CardEmpresaWidgetState extends State<CardEmpresaWidget> {
         width: MediaQuery.sizeOf(context).width * 1.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -73,7 +73,7 @@ class _CardEmpresaWidgetState extends State<CardEmpresaWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -90,7 +90,7 @@ class _CardEmpresaWidgetState extends State<CardEmpresaWidget> {
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).width * 0.2,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
@@ -127,7 +127,7 @@ class _CardEmpresaWidgetState extends State<CardEmpresaWidget> {
                       ),
                     ],
                   ),
-                ].divide(const SizedBox(width: 10.0)),
+                ].divide(SizedBox(width: 10.0)),
               ),
             ],
           ),

@@ -14,6 +14,8 @@ class ListEstabelecimentosModel
 
   // Stores action output result for [Firestore Query - Query a collection] action in ListEstabelecimentos widget.
   List<EmpresasRecord>? resultOfListEmpresas;
+  // Stores action output result for [Firestore Query - Query a collection] action in ListEstabelecimentos widget.
+  BairrosRecord? bairroSelected;
   // Model for JarbasSearchBar component.
   late JarbasSearchBarModel jarbasSearchBarModel;
   List<EmpresasRecord> simpleSearchResults = [];

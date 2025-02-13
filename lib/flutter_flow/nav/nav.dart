@@ -76,28 +76,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const InicioWidget() : const InicioWidget(),
+          appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const InicioWidget() : const InicioWidget(),
+              appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => const HomeWidget(),
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'escolha',
           path: '/escolha',
-          builder: (context, params) => const EscolhaWidget(),
+          builder: (context, params) => EscolhaWidget(),
         ),
         FFRoute(
           name: 'listCategoriaToEstabelecimentos',
           path: '/listCategoriaToEstabelecimentos',
-          builder: (context, params) => const ListCategoriaToEstabelecimentosWidget(),
+          builder: (context, params) => ListCategoriaToEstabelecimentosWidget(),
         ),
         FFRoute(
           name: 'DetalhesEmpresa',
@@ -112,22 +112,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'favoritos',
           path: '/favoritos',
-          builder: (context, params) => const FavoritosWidget(),
+          builder: (context, params) => FavoritosWidget(),
         ),
         FFRoute(
           name: 'Onboardings',
           path: '/onboardings',
-          builder: (context, params) => const OnboardingsWidget(),
+          builder: (context, params) => OnboardingsWidget(),
         ),
         FFRoute(
           name: 'SejaContratado',
           path: '/sejaContratado',
-          builder: (context, params) => const SejaContratadoWidget(),
+          builder: (context, params) => SejaContratadoWidget(),
         ),
         FFRoute(
           name: 'listContratacoes',
           path: '/listContratacoes',
-          builder: (context, params) => const ListContratacoesWidget(),
+          builder: (context, params) => ListContratacoesWidget(),
         ),
         FFRoute(
           name: 'DetalhesVaga',
@@ -152,7 +152,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'manu',
           path: '/manu',
-          builder: (context, params) => const ManuWidget(),
+          builder: (context, params) => ManuWidget(),
         ),
         FFRoute(
           name: 'ListEstabelecimentos',
@@ -171,12 +171,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LoginCadastro',
           path: '/loginCadastro',
-          builder: (context, params) => const LoginCadastroWidget(),
+          builder: (context, params) => LoginCadastroWidget(),
         ),
         FFRoute(
           name: 'Inicio',
           path: '/inicio',
-          builder: (context, params) => const InicioWidget(),
+          builder: (context, params) => InicioWidget(),
         ),
         FFRoute(
           name: 'storyView',
@@ -191,12 +191,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'perfilEditor',
           path: '/perfilEditor',
-          builder: (context, params) => const PerfilEditorWidget(),
+          builder: (context, params) => PerfilEditorWidget(),
         ),
         FFRoute(
           name: 'PerfilDoUser',
           path: '/perfilDoUser',
-          builder: (context, params) => const PerfilDoUserWidget(),
+          builder: (context, params) => PerfilDoUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -432,7 +432,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

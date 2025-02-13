@@ -47,7 +47,7 @@ class _InicioWidgetState extends State<InicioWidget>
           context.pushNamed(
             'Home',
             extra: <String, dynamic>{
-              kTransitionInfoKey: const TransitionInfo(
+              kTransitionInfoKey: TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
               ),
@@ -60,7 +60,7 @@ class _InicioWidgetState extends State<InicioWidget>
         context.pushNamed(
           'Onboardings',
           extra: <String, dynamic>{
-            kTransitionInfoKey: const TransitionInfo(
+            kTransitionInfoKey: TransitionInfo(
               hasTransition: true,
               transitionType: PageTransitionType.fade,
             ),
@@ -85,8 +85,8 @@ class _InicioWidgetState extends State<InicioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(3.0, 3.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(3.0, 3.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -105,8 +105,8 @@ class _InicioWidgetState extends State<InicioWidget>
             curve: Curves.bounceOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -125,8 +125,8 @@ class _InicioWidgetState extends State<InicioWidget>
             curve: Curves.easeInOut,
             delay: 350.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -145,8 +145,8 @@ class _InicioWidgetState extends State<InicioWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -188,9 +188,9 @@ class _InicioWidgetState extends State<InicioWidget>
                       FlutterFlowTheme.of(context).primary,
                       FlutterFlowTheme.of(context).tertiary
                     ],
-                    stops: const [0.0, 0.5],
-                    begin: const AlignmentDirectional(-1.0, -1.0),
-                    end: const AlignmentDirectional(1.0, 1.0),
+                    stops: [0.0, 0.5],
+                    begin: AlignmentDirectional(-1.0, -1.0),
+                    end: AlignmentDirectional(1.0, 1.0),
                   ),
                 ),
                 child: Container(
@@ -199,12 +199,12 @@ class _InicioWidgetState extends State<InicioWidget>
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        const Color(0x00FFFFFF),
+                        Color(0x00FFFFFF),
                         FlutterFlowTheme.of(context).secondaryBackground
                       ],
-                      stops: const [0.0, 1.0],
-                      begin: const AlignmentDirectional(0.0, -1.0),
-                      end: const AlignmentDirectional(0, 1.0),
+                      stops: [0.0, 1.0],
+                      begin: AlignmentDirectional(0.0, -1.0),
+                      end: AlignmentDirectional(0, 1.0),
                     ),
                   ),
                   child: Column(
@@ -219,7 +219,7 @@ class _InicioWidgetState extends State<InicioWidget>
                           shape: BoxShape.circle,
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Image.asset(
                             'assets/images/Captura_de_tela_2024-11-04_170238-removebg-preview.png',
                             width: 100.0,
@@ -231,7 +231,7 @@ class _InicioWidgetState extends State<InicioWidget>
                           animationsMap['containerOnPageLoadAnimation2']!),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
                         child: Text(
                           'Olá',
                           style: FlutterFlowTheme.of(context)
@@ -244,7 +244,7 @@ class _InicioWidgetState extends State<InicioWidget>
                             animationsMap['textOnPageLoadAnimation1']!),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             44.0, 8.0, 44.0, 0.0),
                         child: Text(
                           'Aproveite o app',

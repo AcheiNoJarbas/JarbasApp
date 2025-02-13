@@ -47,7 +47,7 @@ class _CardCategoriaWidgetState extends State<CardCategoriaWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: InkWell(
         splashColor: Colors.transparent,
         focusColor: Colors.transparent,
@@ -58,11 +58,11 @@ class _CardCategoriaWidgetState extends State<CardCategoriaWidget> {
         },
         child: Container(
           width: MediaQuery.sizeOf(context).width * 0.22,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Color(0x00FFFFFF),
           ),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +70,7 @@ class _CardCategoriaWidgetState extends State<CardCategoriaWidget> {
                 Container(
                   width: 100.0,
                   height: 80.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0x00FFFFFF),
                     shape: BoxShape.rectangle,
                   ),
@@ -104,7 +104,7 @@ class _CardCategoriaWidgetState extends State<CardCategoriaWidget> {
                 ),
                 Expanded(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: AutoSizeText(
                       valueOrDefault<String>(
                         widget.objectDocument?.nome,
@@ -118,7 +118,7 @@ class _CardCategoriaWidgetState extends State<CardCategoriaWidget> {
                     ),
                   ),
                 ),
-              ].divide(const SizedBox(height: 5.0)),
+              ].divide(SizedBox(height: 5.0)),
             ),
           ),
         ),

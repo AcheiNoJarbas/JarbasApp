@@ -5,8 +5,14 @@ import 'favoritos_widget.dart' show FavoritosWidget;
 import 'package:flutter/material.dart';
 
 class FavoritosModel extends FlutterFlowModel<FavoritosWidget> {
+  ///  Local state fields for this page.
+
+  bool reload = false;
+
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in favoritos widget.
+  List<EmpresasRecord>? empresasFavoritas;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;

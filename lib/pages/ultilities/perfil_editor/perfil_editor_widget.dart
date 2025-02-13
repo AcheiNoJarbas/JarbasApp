@@ -77,11 +77,11 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Color(0x00FFFFFF),
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 40.0, 10.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 40.0, 10.0, 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -90,8 +90,8 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                     children: [
                       FlutterFlowIconButton(
                         borderRadius: 100.0,
-                        fillColor: const Color(0x27000000),
-                        icon: const Icon(
+                        fillColor: Color(0x27000000),
+                        icon: Icon(
                           Icons.arrow_back,
                           color: Colors.white,
                           size: 30.0,
@@ -110,14 +110,14 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                               fontWeight: FontWeight.w500,
                             ),
                       ),
-                    ].divide(const SizedBox(width: 15.0)),
+                    ].divide(SizedBox(width: 15.0)),
                   ),
                   Expanded(
                     child: ClipRRect(
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 100.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
                         child: SingleChildScrollView(
@@ -131,7 +131,7 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                                   updateCallback: () => safeSetState(() {}),
                                   child: InputFotoCircleWidget(
                                     url:
-                                        valueOrDefault(currentUserDocument?.imageUrl, ''),
+                                        '${valueOrDefault(currentUserDocument?.imageUrl, '')}',
                                     label: 'Sua foto de perfil:',
                                   ),
                                 ),
@@ -150,14 +150,14 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                               wrapWithModel(
                                 model: _model.nomeModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: const InputTextWidget(
+                                child: InputTextWidget(
                                   label: 'Seu Nome de usuário:',
                                 ),
                               ),
                               wrapWithModel(
                                 model: _model.emailModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: const InputTextWidget(
+                                child: InputTextWidget(
                                   label: 'Seu email:',
                                 ),
                               ),
@@ -185,7 +185,7 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                                   },
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 15.0)),
+                            ].divide(SizedBox(height: 15.0)),
                           ),
                         ),
                       ),
@@ -247,14 +247,14 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: const Text('Perfil atualizado!'),
-                              content: const Text(
+                              title: Text('Perfil atualizado!'),
+                              content: Text(
                                   'Seu perfil foi atualizado com sucesso!'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             );
@@ -265,7 +265,7 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                       },
                     ),
                   ),
-                ].divide(const SizedBox(height: 15.0)),
+                ].divide(SizedBox(height: 15.0)),
               ),
             ),
           ),

@@ -44,13 +44,13 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: 80.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -75,7 +75,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                 context.pushNamed(
                   'Home',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                     ),
@@ -103,7 +103,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
             InkWell(
@@ -115,7 +115,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                 context.pushNamed(
                   'manu',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                     ),
@@ -143,7 +143,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
             InkWell(
@@ -156,7 +156,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   context.pushNamed(
                     'favoritos',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                       ),
@@ -167,19 +167,19 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         context: context,
                         builder: (alertDialogContext) {
                           return AlertDialog(
-                            title: const Text('Atenção'),
-                            content: const Text(
+                            title: Text('Atenção'),
+                            content: Text(
                                 'Você precisa estar logado para acessar essa função'),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext, false),
-                                child: const Text('Cancelar'),
+                                child: Text('Cancelar'),
                               ),
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext, true),
-                                child: const Text('Ir para login'),
+                                child: Text('Ir para login'),
                               ),
                             ],
                           );
@@ -197,7 +197,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             color: FlutterFlowTheme.of(context).secondary,
                           ),
                         ),
-                        duration: const Duration(milliseconds: 4000),
+                        duration: Duration(milliseconds: 4000),
                         backgroundColor: FlutterFlowTheme.of(context).primary,
                       ),
                     );
@@ -225,7 +225,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
             InkWell(
@@ -238,7 +238,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   context.pushNamed(
                     'PerfilDoUser',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                       ),
@@ -249,19 +249,19 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         context: context,
                         builder: (alertDialogContext) {
                           return AlertDialog(
-                            title: const Text('Atenção'),
-                            content: const Text(
+                            title: Text('Atenção'),
+                            content: Text(
                                 'Você precisa estar logado para acessar essa função'),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext, false),
-                                child: const Text('Cancelar'),
+                                child: Text('Cancelar'),
                               ),
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext, true),
-                                child: const Text('Ir para login'),
+                                child: Text('Ir para login'),
                               ),
                             ],
                           );
@@ -279,7 +279,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             color: FlutterFlowTheme.of(context).secondary,
                           ),
                         ),
-                        duration: const Duration(milliseconds: 4000),
+                        duration: Duration(milliseconds: 4000),
                         backgroundColor: FlutterFlowTheme.of(context).primary,
                       ),
                     );
@@ -307,7 +307,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
           ],

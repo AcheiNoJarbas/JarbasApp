@@ -10,7 +10,7 @@ class JarbasMediumButtonWidget extends StatefulWidget {
     super.key,
     String? textButton,
     required this.buttonAction,
-  }) : textButton = textButton ?? 'TextButton';
+  }) : this.textButton = textButton ?? 'TextButton';
 
   final String textButton;
   final Future Function()? buttonAction;
@@ -53,9 +53,9 @@ class _JarbasMediumButtonWidgetState extends State<JarbasMediumButtonWidget> {
             FlutterFlowTheme.of(context).primary,
             FlutterFlowTheme.of(context).tertiary
           ],
-          stops: const [0.0, 1.0],
-          begin: const AlignmentDirectional(0.0, -1.0),
-          end: const AlignmentDirectional(0, 1.0),
+          stops: [0.0, 1.0],
+          begin: AlignmentDirectional(0.0, -1.0),
+          end: AlignmentDirectional(0, 1.0),
         ),
       ),
       child: FFButtonWidget(
@@ -69,9 +69,9 @@ class _JarbasMediumButtonWidgetState extends State<JarbasMediumButtonWidget> {
         options: FFButtonOptions(
           width: MediaQuery.sizeOf(context).width * 0.7,
           height: 40.0,
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-          color: const Color(0x003751A6),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+          color: Color(0x003751A6),
           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Inter Tight',
                 color: Colors.white,

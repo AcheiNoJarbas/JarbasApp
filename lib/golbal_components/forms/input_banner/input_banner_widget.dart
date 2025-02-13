@@ -127,7 +127,7 @@ class _InputBannerWidgetState extends State<InputBannerWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.97, 0.88),
+                alignment: AlignmentDirectional(0.97, 0.88),
                 child: FlutterFlowIconButton(
                   borderRadius: 100.0,
                   fillColor: FlutterFlowTheme.of(context).primary,
@@ -181,7 +181,7 @@ class _InputBannerWidgetState extends State<InputBannerWidget> {
             ],
           ),
         ),
-      ].divide(const SizedBox(height: 15.0)),
+      ].divide(SizedBox(height: 15.0)),
     );
   }
 }

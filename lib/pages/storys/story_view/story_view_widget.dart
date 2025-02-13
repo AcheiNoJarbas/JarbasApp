@@ -72,21 +72,21 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
         body: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Color(0x00FFFFFF),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     FlutterFlowIconButton(
                       borderRadius: 100.0,
-                      fillColor: const Color(0x3AFFFFFF),
+                      fillColor: Color(0x3AFFFFFF),
                       icon: Icon(
                         Icons.arrow_back,
                         color: FlutterFlowTheme.of(context).info,
@@ -153,11 +153,11 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                color: const Color(0x00FFFFFF),
+                                color: Color(0x00FFFFFF),
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: EdgeInsets.all(10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +176,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                                     .width *
                                                 0.14,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
@@ -193,7 +193,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                                     .width *
                                                 0.14,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.asset(
@@ -226,7 +226,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 10.0)),
+                                  ].divide(SizedBox(width: 10.0)),
                                 ),
                               ),
                             ),
@@ -235,9 +235,9 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                       ),
                     ),
                   ]
-                      .divide(const SizedBox(width: 10.0))
-                      .addToStart(const SizedBox(width: 10.0))
-                      .addToEnd(const SizedBox(width: 10.0)),
+                      .divide(SizedBox(width: 10.0))
+                      .addToStart(SizedBox(width: 10.0))
+                      .addToEnd(SizedBox(width: 10.0)),
                 ),
               ),
               Expanded(
@@ -246,7 +246,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                     if (_model.reload) {
                       return Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
                         child: Column(
@@ -282,19 +282,19 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                                           .currentPage)
                                                       ?.storyID
                                               ? Colors.white
-                                              : const Color(0x00FFFFFF),
+                                              : Color(0x00FFFFFF),
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                           border: Border.all(
-                                            color: const Color(0xD7FFFFFF),
+                                            color: Color(0xD7FFFFFF),
                                           ),
                                         ),
                                       ),
                                     );
                                   })
-                                      .divide(const SizedBox(width: 2.0))
-                                      .addToStart(const SizedBox(width: 2.0))
-                                      .addToEnd(const SizedBox(width: 2.0)),
+                                      .divide(SizedBox(width: 2.0))
+                                      .addToStart(SizedBox(width: 2.0))
+                                      .addToEnd(SizedBox(width: 2.0)),
                                 );
                               },
                             ),
@@ -308,23 +308,23 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 2.0)),
+                          ].divide(SizedBox(height: 2.0)),
                         ),
                       );
                     } else {
                       return Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: SizedBox(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.15,
                           height: MediaQuery.sizeOf(context).height * 0.07,
                           child: custom_widgets.JarbasLoading(
                             width: MediaQuery.sizeOf(context).width * 0.15,
                             height: MediaQuery.sizeOf(context).height * 0.07,
-                            colorIndicator: const Color(0xFF003CFF),
+                            colorIndicator: Color(0xFF003CFF),
                           ),
                         ),
                       );
@@ -332,7 +332,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                   },
                 ),
               ),
-            ].divide(const SizedBox(height: 5.0)),
+            ].divide(SizedBox(height: 5.0)),
           ),
         ),
       ),

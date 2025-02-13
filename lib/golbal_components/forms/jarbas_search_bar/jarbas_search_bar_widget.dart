@@ -46,14 +46,14 @@ class _JarbasSearchBarWidgetState extends State<JarbasSearchBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
       child: TextFormField(
         controller: _model.textController,
         focusNode: _model.textFieldFocusNode,
         onChanged: (_) => EasyDebounce.debounce(
           '_model.textController',
-          const Duration(milliseconds: 2000),
+          Duration(milliseconds: 2000),
           () async {
             await widget.searchAction?.call();
           },
@@ -74,14 +74,14 @@ class _JarbasSearchBarWidgetState extends State<JarbasSearchBarWidget> {
                 letterSpacing: 0.0,
               ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Color(0x00000000),
               width: 1.0,
             ),
             borderRadius: BorderRadius.circular(8.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Color(0x00000000),
               width: 1.0,
             ),
@@ -102,7 +102,7 @@ class _JarbasSearchBarWidgetState extends State<JarbasSearchBarWidget> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           filled: true,
-          suffixIcon: const Icon(
+          suffixIcon: Icon(
             Icons.search_rounded,
             color: Colors.black,
           ),

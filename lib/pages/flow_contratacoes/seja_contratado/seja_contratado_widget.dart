@@ -61,7 +61,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
           child: Container(
             width: 100.0,
             height: 100.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Color(0x80262D34), Color(0xFF6D6D8A)],
                 stops: [0.0, 1.0],
@@ -74,7 +74,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -98,7 +98,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 44.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 44.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -116,7 +116,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: Text(
                           'Aqui você encontra todas as oportunidades de emprego disponíveis perto de você, facilitando a busca pelo trabalho ideal ao apresentar diversas vagas e informações relevantes, permitindo que você descubra as melhores opções de forma rápida e prática, sem precisar sair de casa.',
                           style: FlutterFlowTheme.of(context)
@@ -129,7 +129,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 100.0, 0.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -147,7 +147,7 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(width: 16.0)),
+                          ].divide(SizedBox(width: 16.0)),
                         ),
                       ),
                     ],

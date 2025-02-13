@@ -69,7 +69,7 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: MediaQuery.sizeOf(context).height * 0.295,
               child: Stack(
@@ -77,7 +77,7 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                   Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.3,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
                     ),
                     child: Column(
@@ -112,7 +112,7 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,8 +120,8 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                         FlutterFlowIconButton(
                           borderRadius: 20.0,
                           buttonSize: 40.0,
-                          fillColor: const Color(0xAC000000),
-                          icon: const Icon(
+                          fillColor: Color(0xAC000000),
+                          icon: Icon(
                             Icons.arrow_back,
                             color: Colors.white,
                             size: 24.0,
@@ -145,7 +145,7 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -234,10 +234,10 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
-                            ].divide(const SizedBox(height: 3.0)),
+                            ].divide(SizedBox(height: 3.0)),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 16.0)),
+                      ].divide(SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -280,19 +280,19 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: const Text('Atenção'),
-                                            content: const Text(
+                                            title: Text('Atenção'),
+                                            content: Text(
                                                 'Você precisa estar logado para acessar essa função'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, false),
-                                                child: const Text('Cancelar'),
+                                                child: Text('Cancelar'),
                                               ),
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, true),
-                                                child: const Text('Ir para login'),
+                                                child: Text('Ir para login'),
                                               ),
                                             ],
                                           );
@@ -311,7 +311,7 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                                             .secondary,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).primary,
                                   ),
@@ -322,36 +322,36 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
                             safeSetState(() {});
                           },
                           text: 'Chamar no Whatssapp',
-                          icon: const FaIcon(
+                          icon: FaIcon(
                             FontAwesomeIcons.whatsapp,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0x00FFFFFF),
+                            color: Color(0x00FFFFFF),
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: const Color(0xFF25D366),
+                                  color: Color(0xFF25D366),
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Color(0xFF25D366),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 10.0)),
+                      ].divide(SizedBox(height: 10.0)),
                     ),
-                  ].divide(const SizedBox(height: 16.0)),
+                  ].divide(SizedBox(height: 16.0)),
                 ),
               ),
             ),

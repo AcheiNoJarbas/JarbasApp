@@ -65,11 +65,11 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
 
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Color(0x00FFFFFF),
           ),
           child: Visibility(
-            visible: storyListStorysRecordList.isNotEmpty,
+            visible: storyListStorysRecordList.length > 0,
             child: StreamBuilder<List<EmpresasRecord>>(
               stream: queryEmpresasRecord(
                 queryBuilder: (empresasRecord) => empresasRecord.whereIn(
@@ -95,7 +95,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
 
                 return Container(
                   width: 100.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0x00FFFFFF),
                   ),
                   child: Column(
@@ -104,7 +104,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Acompanhe as novidades:',
                           textAlign: TextAlign.start,
@@ -120,21 +120,21 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                       Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.11,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final story =
                                 storySecondQueryEmpresasRecordList.toList();
 
                             return ListView.separated(
-                              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                              padding: EdgeInsets.symmetric(horizontal: 15.0),
                               scrollDirection: Axis.horizontal,
                               itemCount: story.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(width: 15.0),
+                                  SizedBox(width: 15.0),
                               itemBuilder: (context, storyIndex) {
                                 final storyItem = story[storyIndex];
                                 return InkWell(
@@ -158,7 +158,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                         MediaQuery.sizeOf(context).width * 0.15,
                                     height:
                                         MediaQuery.sizeOf(context).width * 0.15,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Color(0x00FFFFFF),
                                       shape: BoxShape.circle,
                                     ),
@@ -169,7 +169,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                           builder: (context) {
                                             if (storyItem.fotoUrl != '') {
                                               return Stack(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 children: [
                                                   Container(
@@ -198,20 +198,20 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                           0.16,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.network(
-                                                        storyItem.fotoUrl,
+                                                        '${storyItem.fotoUrl}',
                                                         fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: SizedBox(
+                                                    child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
@@ -267,7 +267,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                               );
                                             } else {
                                               return Stack(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 children: [
                                                   Container(
@@ -279,7 +279,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                                 context)
                                                             .width *
                                                         0.16,
-                                                    decoration: const BoxDecoration(
+                                                    decoration: BoxDecoration(
                                                       color: Color(0x00FFFFFF),
                                                       shape: BoxShape.circle,
                                                     ),
@@ -288,7 +288,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                       height: 200.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -297,7 +297,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                  SizedBox(
+                                                  Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
@@ -352,7 +352,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                             }
                                           },
                                         ),
-                                      ].divide(const SizedBox(height: 10.0)),
+                                      ].divide(SizedBox(height: 10.0)),
                                     ),
                                   ),
                                 );
@@ -361,7 +361,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                           },
                         ),
                       ),
-                    ].divide(const SizedBox(height: 10.0)),
+                    ].divide(SizedBox(height: 10.0)),
                   ),
                 );
               },

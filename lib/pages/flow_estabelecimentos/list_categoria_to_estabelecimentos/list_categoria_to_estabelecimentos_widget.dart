@@ -59,12 +59,12 @@ class _ListCategoriaToEstabelecimentosWidgetState
           ),
         ),
         body: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Stack(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
@@ -76,10 +76,10 @@ class _ListCategoriaToEstabelecimentosWidgetState
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -90,8 +90,8 @@ class _ListCategoriaToEstabelecimentosWidgetState
                           FlutterFlowIconButton(
                             borderRadius: 8.0,
                             buttonSize: 40.0,
-                            fillColor: const Color(0x345A5151),
-                            icon: const Icon(
+                            fillColor: Color(0x345A5151),
+                            icon: Icon(
                               Icons.arrow_back_sharp,
                               color: Colors.black,
                               size: 24.0,
@@ -101,7 +101,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                             },
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 115.0, 0.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
@@ -116,7 +116,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                         ],
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
                           text: TextSpan(
@@ -198,7 +198,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                               return GridView.builder(
                                 padding: EdgeInsets.zero,
                                 gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                    SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
                                   crossAxisSpacing: 10.0,
                                   mainAxisSpacing: 10.0,
@@ -243,7 +243,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                               return GridView.builder(
                                 padding: EdgeInsets.zero,
                                 gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                    SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
                                   crossAxisSpacing: 10.0,
                                   mainAxisSpacing: 10.0,
@@ -274,7 +274,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                             },
                           ),
                         ),
-                    ].divide(const SizedBox(height: 15.0)),
+                    ].divide(SizedBox(height: 15.0)),
                   ),
                 ),
               ),

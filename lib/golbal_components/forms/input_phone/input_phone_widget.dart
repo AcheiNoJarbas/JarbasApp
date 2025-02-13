@@ -68,14 +68,14 @@ class _InputPhoneWidgetState extends State<InputPhoneWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: SizedBox(
+              child: Container(
                 width: 200.0,
                 child: TextFormField(
                   controller: _model.textController,
                   focusNode: _model.textFieldFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.textController',
-                    const Duration(milliseconds: 0),
+                    Duration(milliseconds: 0),
                     () async {
                       await widget.action?.call();
                     },
@@ -139,7 +139,7 @@ class _InputPhoneWidgetState extends State<InputPhoneWidget> {
             ),
           ],
         ),
-      ].divide(const SizedBox(height: 10.0)),
+      ].divide(SizedBox(height: 10.0)),
     );
   }
 }

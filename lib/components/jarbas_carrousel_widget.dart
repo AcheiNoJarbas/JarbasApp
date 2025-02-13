@@ -66,7 +66,7 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
       builder: (context) {
         final storyItem = widget.story!.toList();
 
-        return SizedBox(
+        return Container(
           width: double.infinity,
           height: 200.0,
           child: CarouselSlider.builder(
@@ -86,13 +86,13 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
                               return Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: MediaQuery.sizeOf(context).height * 1.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0x00FFFFFF),
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
-                                    storyItemItem.imageUrl,
+                                    '${storyItemItem.imageUrl}',
                                     width: 200.0,
                                     height: 200.0,
                                     fit: BoxFit.contain,
@@ -100,7 +100,7 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
                                 ),
                               );
                             } else {
-                              return SizedBox(
+                              return Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: MediaQuery.sizeOf(context).height * 1.0,
                                 child: custom_widgets.JarbasVideoPlayer(
@@ -124,7 +124,7 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -155,17 +155,17 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
                                 });
                               },
                             ),
-                          ].addToEnd(const SizedBox(width: 15.0)),
+                          ].addToEnd(SizedBox(width: 15.0)),
                         ),
                       ),
                       if (storyItemItem.descricao != '')
                         Container(
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x9B000000),
                           ),
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(10.0),
                             child: Text(
                               valueOrDefault<String>(
                                 storyItemItem.descricao,
@@ -198,7 +198,7 @@ class _JarbasCarrouselWidgetState extends State<JarbasCarrouselWidget> {
               enableInfiniteScroll: true,
               scrollDirection: Axis.horizontal,
               autoPlay: true,
-              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+              autoPlayAnimationDuration: Duration(milliseconds: 800),
               autoPlayInterval: Duration(
                   milliseconds: (800 +
                       valueOrDefault<int>(

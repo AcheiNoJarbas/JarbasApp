@@ -12,7 +12,7 @@ class LikedButtonWidget extends StatefulWidget {
     required this.likeYes,
     required this.likeNo,
     bool? stateLike,
-  }) : stateLike = stateLike ?? false;
+  }) : this.stateLike = stateLike ?? false;
 
   final Future Function()? likeYes;
   final Future Function()? likeNo;
@@ -62,7 +62,7 @@ class _LikedButtonWidgetState extends State<LikedButtonWidget> {
           FlutterFlowIconButton(
             borderRadius: 100.0,
             fillColor: FlutterFlowTheme.of(context).alternate,
-            icon: const Icon(
+            icon: Icon(
               Icons.favorite_border,
               color: Colors.black,
               size: 30.0,

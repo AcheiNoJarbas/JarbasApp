@@ -40,8 +40,8 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 1120.0.ms,
-            begin: const Offset(1.0, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(1.0, 1.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -52,8 +52,8 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 1120.0.ms,
-            begin: const Offset(1.0, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(1.0, 1.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -96,10 +96,10 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
         body: SafeArea(
           top: true,
           child: Stack(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -107,7 +107,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +141,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               'Selecione uma localidade e veja os \n anuncios esperando por você',
@@ -215,7 +215,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                               itemCount:
                                   listViewTodasMunicipiosRecordList.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 10.0),
+                                  SizedBox(height: 10.0),
                               itemBuilder: (context, listViewTodasIndex) {
                                 final listViewTodasMunicipiosRecord =
                                     listViewTodasMunicipiosRecordList[
@@ -248,7 +248,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                               height: 78.0,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
@@ -267,7 +267,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: Row(
@@ -316,7 +316,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Inter',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x81000000),
                                                                   fontSize:
                                                                       12.0,
@@ -327,7 +327,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                                           .w500,
                                                                 ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 10.0)),
                                                       ),
                                                     ),
@@ -342,7 +342,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                   .municipioSelected
                                                   .municipioID)
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 0.0, 0.0),
                                               child: Icon(
@@ -356,7 +356,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                             ),
                                         ],
                                       ),
-                                    ].divide(const SizedBox(height: 10.0)),
+                                    ].divide(SizedBox(height: 10.0)),
                                   ),
                                 );
                               },
@@ -364,10 +364,10 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                           },
                         ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Container(
                           height: 200.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Visibility(
                             visible: _model.jarbasSearchBarModel.textController
                                         .text !=
@@ -384,7 +384,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                   scrollDirection: Axis.vertical,
                                   itemCount: pesquisa.length,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 10.0),
+                                      SizedBox(height: 10.0),
                                   itemBuilder: (context, pesquisaIndex) {
                                     final pesquisaItem =
                                         pesquisa[pesquisaIndex];
@@ -418,7 +418,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                   height: 78.0,
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -441,7 +441,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 20.0, 0.0),
                                                     child: Row(
@@ -488,7 +488,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Inter',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0x7F000000),
                                                                     fontSize:
                                                                         12.0,
@@ -499,7 +499,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                                             .w500,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 10.0)),
                                                         ),
                                                       ],
@@ -512,7 +512,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                       .municipioSelected
                                                       .municipioID)
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 10.0, 0.0, 0.0),
                                                   child: Icon(
@@ -526,7 +526,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                                                 ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 10.0)),
+                                        ].divide(SizedBox(height: 10.0)),
                                       ),
                                     );
                                   },
@@ -536,19 +536,19 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 15.0)),
+                    ].divide(SizedBox(height: 15.0)),
                   ),
                 ),
               ),
               Padding(
                 padding:
-                    const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+                    EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed(
                       'Home',
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                         ),
@@ -560,9 +560,9 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                     width: double.infinity,
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle:
                         FlutterFlowTheme.of(context).titleSmall.override(

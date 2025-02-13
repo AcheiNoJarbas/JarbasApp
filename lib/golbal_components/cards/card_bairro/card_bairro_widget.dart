@@ -58,7 +58,7 @@ class _CardBairroWidgetState extends State<CardBairroWidget> {
         height: MediaQuery.sizeOf(context).height * 0.1,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -74,7 +74,7 @@ class _CardBairroWidgetState extends State<CardBairroWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+          padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -87,14 +87,14 @@ class _CardBairroWidgetState extends State<CardBairroWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                       child: Text(
                         valueOrDefault<String>(
                           widget.objectBairro?.nome,

@@ -9,6 +9,7 @@ import '/golbal_components/nav_bar/nav_bar_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -42,6 +43,8 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -51,7 +54,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
@@ -65,7 +68,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 0.08,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0x00FFFFFF),
                   ),
                   child: Row(
@@ -76,7 +79,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         width: MediaQuery.sizeOf(context).width * 0.13,
                         height: MediaQuery.sizeOf(context).width * 0.13,
                         clipBehavior: Clip.antiAlias,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
@@ -90,17 +93,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Expanded(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         StreamBuilder<List<EmpresasRecord>>(
                           stream: queryEmpresasRecord(
-                            queryBuilder: (empresasRecord) =>
-                                empresasRecord.where(
-                              'inDestaque',
-                              isEqualTo: true,
-                            ),
+                            queryBuilder: (empresasRecord) => empresasRecord
+                                .where(
+                                  'inDestaque',
+                                  isEqualTo: true,
+                                )
+                                .where(
+                                  'municipios',
+                                  arrayContains: FFAppState()
+                                      .municipioSelected
+                                      .municipioID,
+                                ),
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
@@ -121,16 +130,18 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 snapshot.data!;
 
                             return Container(
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Visibility(
-                                visible: divulgacaoContainerEmpresasRecordList.isNotEmpty,
+                                visible: divulgacaoContainerEmpresasRecordList
+                                        .length >
+                                    0,
                                 child: Builder(
                                   builder: (context) {
                                     final itemDivul =
                                         divulgacaoContainerEmpresasRecordList
                                             .toList();
 
-                                    return SizedBox(
+                                    return Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height:
@@ -165,7 +176,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   1.0,
-                                              decoration: const BoxDecoration(
+                                              decoration: BoxDecoration(
                                                 color: Color(0x00FFFFFF),
                                               ),
                                               child: Stack(
@@ -183,18 +194,18 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       ''
                                                               ? valueOrDefault<
                                                                   String>(
-                                                                  valueOrDefault<String>(
+                                                                  '${valueOrDefault<String>(
                                                                     itemDivulItem
                                                                         .fotoUrl,
                                                                     'https://static.vecteezy.com/system/resources/previews/000/664/483/original/abstract-blue-banner-design-vector.jpg',
-                                                                  ),
+                                                                  )}',
                                                                   'https://static.vecteezy.com/system/resources/previews/000/664/483/original/abstract-blue-banner-design-vector.jpg',
                                                                 )
-                                                              : valueOrDefault<String>(
+                                                              : '${valueOrDefault<String>(
                                                                   itemDivulItem
                                                                       .bannerUrl,
                                                                   'https://static.vecteezy.com/system/resources/previews/000/664/483/original/abstract-blue-banner-design-vector.jpg',
-                                                                ),
+                                                                )}',
                                                           'https://static.vecteezy.com/system/resources/previews/000/664/483/original/abstract-blue-banner-design-vector.jpg',
                                                         ),
                                                         width:
@@ -212,7 +223,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             -0.97, 0.93),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
@@ -223,7 +234,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   context)
                                                               .height *
                                                           1.0,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius.only(
                                                           bottomLeft:
@@ -254,7 +265,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             5.0),
                                                                 child:
@@ -270,7 +281,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      const BoxDecoration(
+                                                                      BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -307,8 +318,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           scrollDirection: Axis.horizontal,
                                           autoPlay: true,
                                           autoPlayAnimationDuration:
-                                              const Duration(milliseconds: 800),
-                                          autoPlayInterval: const Duration(
+                                              Duration(milliseconds: 800),
+                                          autoPlayInterval: Duration(
                                               milliseconds: (800 + 5000)),
                                           autoPlayCurve: Curves.linear,
                                           pauseAutoPlayInFiniteScroll: true,
@@ -326,10 +337,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         wrapWithModel(
                           model: _model.listStoriesModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const ListStoriesWidget(),
+                          child: ListStoriesWidget(),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: wrapWithModel(
                             model: _model.jarbasLargeButtonModel,
@@ -352,13 +363,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  offset: const Offset(
+                                  offset: Offset(
                                     0.0,
                                     2.0,
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(20.0),
@@ -366,7 +377,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 20.0, 10.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -437,14 +448,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     .toList();
 
                                                 return GridView.builder(
-                                                  padding: const EdgeInsets.fromLTRB(
+                                                  padding: EdgeInsets.fromLTRB(
                                                     0,
                                                     0,
                                                     0,
                                                     15.0,
                                                   ),
                                                   gridDelegate:
-                                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                                      SliverGridDelegateWithFixedCrossAxisCount(
                                                     crossAxisCount: 3,
                                                     crossAxisSpacing: 10.0,
                                                     mainAxisSpacing: 10.0,
@@ -530,14 +541,14 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                       return GridView.builder(
                                                         padding:
-                                                            const EdgeInsets.fromLTRB(
+                                                            EdgeInsets.fromLTRB(
                                                           0,
                                                           0,
                                                           0,
                                                           15.0,
                                                         ),
                                                         gridDelegate:
-                                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                                            SliverGridDelegateWithFixedCrossAxisCount(
                                                           crossAxisCount: 3,
                                                           crossAxisSpacing:
                                                               10.0,
@@ -587,19 +598,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       },
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 15.0)),
+                                ].divide(SizedBox(height: 15.0)),
                               ),
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 10.0)),
+                      ].divide(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),
                 wrapWithModel(
                   model: _model.navBarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavBarWidget(
+                  child: NavBarWidget(
                     tela: 1,
                   ),
                 ),

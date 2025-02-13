@@ -43,8 +43,8 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -62,8 +62,8 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -81,8 +81,8 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 170.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 170.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -100,8 +100,8 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,8 +119,8 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -164,7 +164,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 0.0, 0.0),
                     child: Text(
                       'Menu de opções',
                       style:
@@ -176,7 +176,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'Selecione e converse com um adminstrador',
                       textAlign: TextAlign.start,
@@ -188,10 +188,10 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(30.0, 20.0, 30.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(30.0, 20.0, 30.0, 0.0),
                     child: GridView(
                       padding: EdgeInsets.zero,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 10.0,
                         mainAxisSpacing: 10.0,
@@ -221,7 +221,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -235,7 +235,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'Fale conosco',
@@ -279,7 +279,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -294,7 +294,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'Anunciar minha empresa',
@@ -342,7 +342,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -357,7 +357,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'Criar video para minha empresa',
@@ -403,7 +403,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -418,7 +418,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'Criar logo para minha empresa',
@@ -464,7 +464,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -479,10 +479,10 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
-                                      'Divulgar meu bairro/minicipio',
+                                      'Divulgar meu bairro/minicípio',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -508,10 +508,10 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           if (_model.menu != null && _model.menu != '') {
@@ -530,7 +530,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
                                 ),
-                                duration: const Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -546,13 +546,13 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                         options: FFButtonOptions(
                           width: 371.0,
                           height: 48.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: _model.menu != null && _model.menu != ''
-                              ? const Color(0xFF25D366)
-                              : const Color(0x5425D366),
+                              ? Color(0xFF25D366)
+                              : Color(0x5425D366),
                           textStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
@@ -562,7 +562,7 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
                                 letterSpacing: 0.0,
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -575,17 +575,17 @@ class _ManuWidgetState extends State<ManuWidget> with TickerProviderStateMixin {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 height: 89.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Color(0x00FFFFFF),
                 ),
                 child: wrapWithModel(
                   model: _model.navBarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavBarWidget(
+                  child: NavBarWidget(
                     tela: 2,
                   ),
                 ),

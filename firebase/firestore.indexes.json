@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "empresas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "inDestaque",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "municipios",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    }
+  ]
 }

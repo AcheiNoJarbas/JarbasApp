@@ -38,15 +38,15 @@ class _SemStoresWidgetState extends State<SemStoresWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0x00FFFFFF),
+          color: Color(0x00FFFFFF),
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -72,9 +72,9 @@ class _SemStoresWidgetState extends State<SemStoresWidget> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                ].divide(const SizedBox(width: 5.0)),
+                ].divide(SizedBox(width: 5.0)),
               ),
-            ].divide(const SizedBox(height: 16.0)),
+            ].divide(SizedBox(height: 16.0)),
           ),
         ),
       ),

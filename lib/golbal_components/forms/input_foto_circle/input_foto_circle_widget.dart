@@ -66,7 +66,7 @@ class _InputFotoCircleWidgetState extends State<InputFotoCircleWidget> {
           child: Container(
             width: MediaQuery.sizeOf(context).width * 0.5,
             height: MediaQuery.sizeOf(context).height * 0.25,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Color(0x00FFFFFF),
             ),
             child: Stack(
@@ -89,7 +89,7 @@ class _InputFotoCircleWidgetState extends State<InputFotoCircleWidget> {
                                 (_model.upload?.bytes?.isEmpty ?? true))) {
                           return Container(
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
@@ -103,7 +103,7 @@ class _InputFotoCircleWidgetState extends State<InputFotoCircleWidget> {
                             width: 200.0,
                             height: 200.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.memory(
@@ -123,7 +123,7 @@ class _InputFotoCircleWidgetState extends State<InputFotoCircleWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.92, 0.91),
+                  alignment: AlignmentDirectional(0.92, 0.91),
                   child: FlutterFlowIconButton(
                     borderRadius: 100.0,
                     fillColor: FlutterFlowTheme.of(context).primary,
