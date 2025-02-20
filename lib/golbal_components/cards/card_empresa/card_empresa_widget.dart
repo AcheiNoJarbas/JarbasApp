@@ -62,8 +62,8 @@ class _CardEmpresaWidgetState extends State<CardEmpresaWidget> {
               blurRadius: 4.0,
               color: Color(0x33000000),
               offset: Offset(
-                5.0,
-                5.0,
+                3.0,
+                3.0,
               ),
             )
           ],
