@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'detalhes_empresa_widget.dart' show DetalhesEmpresaWidget;
 import 'package:flutter/material.dart';
 

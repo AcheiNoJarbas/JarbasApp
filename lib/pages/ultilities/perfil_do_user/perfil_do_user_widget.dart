@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/nav_bar/nav_bar_widget.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,9 @@ export 'perfil_do_user_model.dart';
 
 class PerfilDoUserWidget extends StatefulWidget {
   const PerfilDoUserWidget({super.key});
+
+  static String routeName = 'PerfilDoUser';
+  static String routePath = '/perfilDoUser';
 
   @override
   State<PerfilDoUserWidget> createState() => _PerfilDoUserWidgetState();
@@ -356,7 +360,8 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('perfilEditor');
+                                          context.pushNamed(
+                                              PerfilEditorWidget.routeName);
                                         },
                                         child: Material(
                                           color: Colors.transparent,
@@ -551,7 +556,8 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.pushNamed('escolha');
+                                                context.pushNamed(
+                                                    EscolhaWidget.routeName);
                                               },
                                               child: Material(
                                                 color: Colors.transparent,
@@ -718,7 +724,8 @@ class _PerfilDoUserWidgetState extends State<PerfilDoUserWidget> {
 
                                             _navigate = () =>
                                                 context.goNamedAuth(
-                                                    'Inicio', context.mounted);
+                                                    InicioWidget.routeName,
+                                                    context.mounted);
                                           } else {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(

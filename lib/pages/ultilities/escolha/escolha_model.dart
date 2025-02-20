@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
+import '/index.dart';
 import 'escolha_widget.dart' show EscolhaWidget;
 import 'package:flutter/material.dart';
 

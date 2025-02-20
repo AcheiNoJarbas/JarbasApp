@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'list_stories_model.dart';
@@ -44,7 +45,11 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
       stream: queryStorysRecord(
         queryBuilder: (storysRecord) => storysRecord.where(
           'createdTime',
-          isEqualTo: dateTimeFormat("dd/MM/yyyy", getCurrentTimestamp),
+          isEqualTo: dateTimeFormat(
+            "dd/MM/yyyy",
+            getCurrentTimestamp,
+            locale: FFLocalizations.of(context).languageCode,
+          ),
         ),
       ),
       builder: (context, snapshot) {
@@ -144,7 +149,7 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'storyView',
+                                      StoryViewWidget.routeName,
                                       queryParameters: {
                                         'empresaID': serializeParam(
                                           storyItem.empresaID,
@@ -232,25 +237,30 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                                         context)
                                                                     .height *
                                                                 0.11,
-                                                        totalPosts: storyListStorysRecordList
-                                                            .where((e) =>
-                                                                (e.empresaID ==
-                                                                    storyItem
-                                                                        .empresaID) &&
-                                                                (e.createdTime ==
-                                                                    dateTimeFormat(
-                                                                        "dd/MM/yyyy",
-                                                                        getCurrentTimestamp)))
-                                                            .toList()
-                                                            .length,
+                                                        totalPosts:
+                                                            storyListStorysRecordList
+                                                                .where((e) =>
+                                                                    (e.empresaID ==
+                                                                        storyItem
+                                                                            .empresaID) &&
+                                                                    (e.createdTime ==
+                                                                        dateTimeFormat(
+                                                                          "dd/MM/yyyy",
+                                                                          getCurrentTimestamp,
+                                                                          locale:
+                                                                              FFLocalizations.of(context).languageCode,
+                                                                        )))
+                                                                .toList()
+                                                                .length,
                                                         space: storyListStorysRecordList
                                                                     .where((e) =>
-                                                                        (e.empresaID ==
-                                                                            storyItem
-                                                                                .empresaID) &&
+                                                                        (e.empresaID == storyItem.empresaID) &&
                                                                         (e.createdTime ==
-                                                                            dateTimeFormat("dd/MM/yyyy",
-                                                                                getCurrentTimestamp)))
+                                                                            dateTimeFormat(
+                                                                              "dd/MM/yyyy",
+                                                                              getCurrentTimestamp,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            )))
                                                                     .toList()
                                                                     .length ==
                                                                 1
@@ -316,26 +326,31 @@ class _ListStoriesWidgetState extends State<ListStoriesWidget> {
                                                                   context)
                                                               .height *
                                                           0.09,
-                                                      totalPosts: storyListStorysRecordList
-                                                          .where((e) =>
-                                                              (e.empresaID ==
-                                                                  storyItem
-                                                                      .empresaID) &&
-                                                              (e.createdTime ==
-                                                                  dateTimeFormat(
-                                                                      "dd/MM/yyyy",
-                                                                      getCurrentTimestamp)))
-                                                          .toList()
-                                                          .length,
+                                                      totalPosts:
+                                                          storyListStorysRecordList
+                                                              .where((e) =>
+                                                                  (e.empresaID ==
+                                                                      storyItem
+                                                                          .empresaID) &&
+                                                                  (e.createdTime ==
+                                                                      dateTimeFormat(
+                                                                        "dd/MM/yyyy",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      )))
+                                                              .toList()
+                                                              .length,
                                                       space: storyListStorysRecordList
                                                                   .where((e) =>
-                                                                      (e.empresaID ==
-                                                                          storyItem
-                                                                              .empresaID) &&
+                                                                      (e.empresaID == storyItem.empresaID) &&
                                                                       (e.createdTime ==
                                                                           dateTimeFormat(
-                                                                              "dd/MM/yyyy",
-                                                                              getCurrentTimestamp)))
+                                                                            "dd/MM/yyyy",
+                                                                            getCurrentTimestamp,
+                                                                            locale:
+                                                                                FFLocalizations.of(context).languageCode,
+                                                                          )))
                                                                   .toList()
                                                                   .length ==
                                                               1

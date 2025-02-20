@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'detalhes_vaga_widget.dart' show DetalhesVagaWidget;
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class DetalhesVagaModel extends FlutterFlowModel<DetalhesVagaWidget> {
 
   // Stores action output result for [Firestore Query - Query a collection] action in DetalhesVaga widget.
   ContratacoesRecord? resultQueryContratacaoByID;
+  // Stores action output result for [Firestore Query - Query a collection] action in DetalhesVaga widget.
+  EmpresasRecord? empresa;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   EmpresasRecord? empresaById;
 

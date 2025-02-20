@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/cards/card_categoria/card_categoria_widget.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:text_search/text_search.dart';
 import 'list_categoria_to_estabelecimentos_model.dart';
@@ -11,6 +12,9 @@ export 'list_categoria_to_estabelecimentos_model.dart';
 
 class ListCategoriaToEstabelecimentosWidget extends StatefulWidget {
   const ListCategoriaToEstabelecimentosWidget({super.key});
+
+  static String routeName = 'listCategoriaToEstabelecimentos';
+  static String routePath = '/listCategoriaToEstabelecimentos';
 
   @override
   State<ListCategoriaToEstabelecimentosWidget> createState() =>
@@ -218,7 +222,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                                         gridViewTodasCategoriasRecord,
                                     cardFunction: () async {
                                       context.pushNamed(
-                                        'ListLocalidades',
+                                        ListLocalidadesWidget.routeName,
                                         queryParameters: {
                                           'categoria': serializeParam(
                                             gridViewTodasCategoriasRecord.nome,
@@ -259,7 +263,7 @@ class _ListCategoriaToEstabelecimentosWidgetState
                                     objectDocument: pesquisaItem,
                                     cardFunction: () async {
                                       context.pushNamed(
-                                        'ListLocalidades',
+                                        ListLocalidadesWidget.routeName,
                                         queryParameters: {
                                           'categoria': serializeParam(
                                             pesquisaItem.nome,

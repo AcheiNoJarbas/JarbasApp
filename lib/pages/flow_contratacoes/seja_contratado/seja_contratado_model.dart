@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/buttons/jarbas_large_button/jarbas_large_button_widget.dart';
+import '/index.dart';
 import 'seja_contratado_widget.dart' show SejaContratadoWidget;
 import 'package:flutter/material.dart';
 

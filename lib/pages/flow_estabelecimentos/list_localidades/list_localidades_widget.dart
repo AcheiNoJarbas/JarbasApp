@@ -6,6 +6,7 @@ import '/golbal_components/cards/card_bairro/card_bairro_widget.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
 import '/golbal_components/forms/lista_vazia/lista_vazia_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,9 @@ class ListLocalidadesWidget extends StatefulWidget {
   }) : this.categoria = categoria ?? 'Normal';
 
   final String categoria;
+
+  static String routeName = 'ListLocalidades';
+  static String routePath = '/listLocalidades';
 
   @override
   State<ListLocalidadesWidget> createState() => _ListLocalidadesWidgetState();
@@ -283,7 +287,8 @@ class _ListLocalidadesWidgetState extends State<ListLocalidadesWidget> {
                                                   objectBairro: bairroItem,
                                                   cardFunction: () async {
                                                     context.pushNamed(
-                                                      'ListEstabelecimentos',
+                                                      ListEstabelecimentosWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'categoria':
                                                             serializeParam(
@@ -354,7 +359,8 @@ class _ListLocalidadesWidgetState extends State<ListLocalidadesWidget> {
                                                   objectBairro: bairroItem,
                                                   cardFunction: () async {
                                                     context.pushNamed(
-                                                      'ListEstabelecimentos',
+                                                      ListEstabelecimentosWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'categoria':
                                                             serializeParam(

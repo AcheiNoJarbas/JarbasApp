@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -14,6 +15,9 @@ export 'login_cadastro_model.dart';
 
 class LoginCadastroWidget extends StatefulWidget {
   const LoginCadastroWidget({super.key});
+
+  static String routeName = 'LoginCadastro';
+  static String routePath = '/loginCadastro';
 
   @override
   State<LoginCadastroWidget> createState() => _LoginCadastroWidgetState();
@@ -35,7 +39,7 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
-        context.pushNamed('Home');
+        context.pushNamed(HomeWidget.routeName);
       }
     });
 
@@ -565,7 +569,8 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                       }
 
                                                       context.goNamedAuth(
-                                                          'Inicio',
+                                                          InicioWidget
+                                                              .routeName,
                                                           context.mounted);
                                                     },
                                                     text: 'Entrar',
@@ -718,7 +723,8 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'Inicio',
+                                                                        InicioWidget
+                                                                            .routeName,
                                                                         context
                                                                             .mounted);
                                                                   },
@@ -1326,7 +1332,8 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                           ));
 
                                                       context.goNamedAuth(
-                                                          'Inicio',
+                                                          InicioWidget
+                                                              .routeName,
                                                           context.mounted);
                                                     },
                                                     text: 'Criar conta',
@@ -1479,7 +1486,8 @@ class _LoginCadastroWidgetState extends State<LoginCadastroWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'Inicio',
+                                                                        InicioWidget
+                                                                            .routeName,
                                                                         context
                                                                             .mounted);
                                                                   },

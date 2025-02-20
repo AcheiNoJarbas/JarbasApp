@@ -4,6 +4,7 @@ import '/golbal_components/buttons/jarbas_large_button/jarbas_large_button_widge
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
 import '/golbal_components/list_stories/list_stories_widget.dart';
 import '/golbal_components/nav_bar/nav_bar_widget.dart';
+import '/index.dart';
 import 'home_widget.dart' show HomeWidget;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';

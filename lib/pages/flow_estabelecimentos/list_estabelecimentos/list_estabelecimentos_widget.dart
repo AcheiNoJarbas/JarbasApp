@@ -6,6 +6,7 @@ import '/golbal_components/cards/card_empresa/card_empresa_widget.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
 import '/golbal_components/forms/lista_vazia/lista_vazia_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -23,6 +24,9 @@ class ListEstabelecimentosWidget extends StatefulWidget {
 
   final String? categoria;
   final String? bairro;
+
+  static String routeName = 'ListEstabelecimentos';
+  static String routePath = '/listEstabelecimentos';
 
   @override
   State<ListEstabelecimentosWidget> createState() =>
@@ -249,7 +253,8 @@ class _ListEstabelecimentosWidgetState
                                                             empresaItem,
                                                         cardFunction: () async {
                                                           context.pushNamed(
-                                                            'DetalhesEmpresa',
+                                                            DetalhesEmpresaWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'empresaID':
                                                                   serializeParam(
@@ -314,7 +319,8 @@ class _ListEstabelecimentosWidgetState
                                                           empresaItem,
                                                       cardFunction: () async {
                                                         context.pushNamed(
-                                                          'DetalhesEmpresa',
+                                                          DetalhesEmpresaWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'empresaID':
                                                                 serializeParam(

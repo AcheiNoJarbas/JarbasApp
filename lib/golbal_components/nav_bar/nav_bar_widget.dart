@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
@@ -73,7 +74,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               highlightColor: Colors.transparent,
               onTap: () async {
                 context.pushNamed(
-                  'Home',
+                  HomeWidget.routeName,
                   extra: <String, dynamic>{
                     kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
@@ -113,7 +114,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               highlightColor: Colors.transparent,
               onTap: () async {
                 context.pushNamed(
-                  'manu',
+                  ManuWidget.routeName,
                   extra: <String, dynamic>{
                     kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
@@ -154,7 +155,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               onTap: () async {
                 if (currentUserUid != '') {
                   context.pushNamed(
-                    'favoritos',
+                    FavoritosWidget.routeName,
                     extra: <String, dynamic>{
                       kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
@@ -187,7 +188,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       ) ??
                       false;
                   if (confirmDialogResponse) {
-                    context.pushNamed('LoginCadastro');
+                    context.pushNamed(LoginCadastroWidget.routeName);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
@@ -236,7 +237,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               onTap: () async {
                 if (currentUserUid != '') {
                   context.pushNamed(
-                    'PerfilDoUser',
+                    PerfilDoUserWidget.routeName,
                     extra: <String, dynamic>{
                       kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
@@ -269,7 +270,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       ) ??
                       false;
                   if (confirmDialogResponse) {
-                    context.pushNamed('LoginCadastro');
+                    context.pushNamed(LoginCadastroWidget.routeName);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(

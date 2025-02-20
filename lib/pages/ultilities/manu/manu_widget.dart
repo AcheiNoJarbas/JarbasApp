@@ -12,6 +12,9 @@ export 'manu_model.dart';
 class ManuWidget extends StatefulWidget {
   const ManuWidget({super.key});
 
+  static String routeName = 'manu';
+  static String routePath = '/manu';
+
   @override
   State<ManuWidget> createState() => _ManuWidgetState();
 }

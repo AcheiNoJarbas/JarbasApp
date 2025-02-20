@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/cards/card_contratacao/card_contratacao_widget.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
@@ -12,6 +13,9 @@ export 'list_contratacoes_model.dart';
 
 class ListContratacoesWidget extends StatefulWidget {
   const ListContratacoesWidget({super.key});
+
+  static String routeName = 'listContratacoes';
+  static String routePath = '/listContratacoes';
 
   @override
   State<ListContratacoesWidget> createState() => _ListContratacoesWidgetState();
@@ -225,7 +229,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                                       objectDocument: contratacaoItemItem,
                                       cardAction: () async {
                                         context.pushNamed(
-                                          'DetalhesVaga',
+                                          DetalhesVagaWidget.routeName,
                                           queryParameters: {
                                             'contratacaoID': serializeParam(
                                               contratacaoItemItem.reference.id,
@@ -285,7 +289,7 @@ class _ListContratacoesWidgetState extends State<ListContratacoesWidget> {
                                       context.pop();
                                     }
                                     context.pushNamed(
-                                      'DetalhesVaga',
+                                      DetalhesVagaWidget.routeName,
                                       queryParameters: {
                                         'contratacaoID': serializeParam(
                                           contratacaoItem.contratacaoID,

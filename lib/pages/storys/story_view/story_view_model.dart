@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/components/jarbas_carrousel_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'story_view_widget.dart' show StoryViewWidget;
 import 'package:flutter/material.dart';
 

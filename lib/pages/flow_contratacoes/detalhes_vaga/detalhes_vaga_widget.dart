@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,9 @@ class DetalhesVagaWidget extends StatefulWidget {
   });
 
   final String? contratacaoID;
+
+  static String routeName = 'DetalhesVaga';
+  static String routePath = '/detalhesVaga';
 
   @override
   State<DetalhesVagaWidget> createState() => _DetalhesVagaWidgetState();
@@ -44,6 +49,13 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
         ),
         singleRecord: true,
       ).then((s) => s.firstOrNull);
+      _model.empresa = await queryEmpresasRecordOnce(
+        queryBuilder: (empresasRecord) => empresasRecord.where(
+          'empresaID',
+          isEqualTo: _model.resultQueryContratacaoByID?.empresaID,
+        ),
+        singleRecord: true,
+      ).then((s) => s.firstOrNull);
       _model.reload = true;
       safeSetState(() {});
     });
@@ -65,297 +77,363 @@ class _DetalhesVagaWidgetState extends State<DetalhesVagaWidget> {
       backgroundColor: Colors.white,
       body: SafeArea(
         top: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: MediaQuery.sizeOf(context).height * 0.295,
-              child: Stack(
+        child: Builder(
+          builder: (context) {
+            if (_model.reload) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 0.3,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                    height: MediaQuery.sizeOf(context).height * 0.295,
+                    child: Stack(
                       children: [
-                        if (_model.resultQueryContratacaoByID?.bannerUrl ==
-                                null ||
-                            _model.resultQueryContratacaoByID?.bannerUrl == '')
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(0.0),
-                            child: Image.asset(
-                              'assets/images/Imagem_do_WhatsApp_de_2024-11-04_(s)_16.26.23_57357408.jpg',
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 0.295,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        if (_model.resultQueryContratacaoByID?.bannerUrl !=
-                                null &&
-                            _model.resultQueryContratacaoByID?.bannerUrl != '')
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(0.0),
-                            child: Image.network(
-                              '${_model.resultQueryContratacaoByID?.bannerUrl}',
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 0.295,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        FlutterFlowIconButton(
-                          borderRadius: 20.0,
-                          buttonSize: 40.0,
-                          fillColor: Color(0xAC000000),
-                          icon: Icon(
-                            Icons.arrow_back,
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          decoration: BoxDecoration(
                             color: Colors.white,
-                            size: 24.0,
                           ),
-                          onPressed: () async {
-                            context.safePop();
-                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              if (_model.resultQueryContratacaoByID
+                                          ?.bannerUrl ==
+                                      null ||
+                                  _model.resultQueryContratacaoByID
+                                          ?.bannerUrl ==
+                                      '')
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  child: Image.asset(
+                                    'assets/images/Imagem_do_WhatsApp_de_2024-11-04_(s)_16.26.23_57357408.jpg',
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.295,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              if (_model.resultQueryContratacaoByID
+                                          ?.bannerUrl !=
+                                      null &&
+                                  _model.resultQueryContratacaoByID
+                                          ?.bannerUrl !=
+                                      '')
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  child: Image.network(
+                                    '${_model.resultQueryContratacaoByID?.bannerUrl}',
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.295,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 16.0, 16.0, 16.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderRadius: 20.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0xAC000000),
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  color: Colors.white,
+                                  size: 24.0,
+                                ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                border: Border.all(
-                  color: FlutterFlowTheme.of(context).alternate,
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Material(
-                          color: Colors.transparent,
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40.0),
-                          ),
-                          child: Container(
-                            width: 80.0,
-                            height: 80.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primary,
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                if (_model.resultQueryContratacaoByID
-                                            ?.fotoUrl ==
-                                        null ||
-                                    _model.resultQueryContratacaoByID
-                                            ?.fotoUrl ==
-                                        '')
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    child: Image.asset(
-                                      'assets/images/Imagem_do_WhatsApp_de_2024-11-04_(s)_16.26.23_57357408.jpg',
-                                      width: 80.0,
-                                      height: 80.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                if (_model.resultQueryContratacaoByID
-                                            ?.fotoUrl !=
-                                        null &&
-                                    _model.resultQueryContratacaoByID
-                                            ?.fotoUrl !=
-                                        '')
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    child: Image.network(
-                                      '${_model.resultQueryContratacaoByID?.fotoUrl}',
-                                      width: 80.0,
-                                      height: 80.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
+                  Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          16.0, 16.0, 16.0, 16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.resultQueryContratacaoByID?.nomeDaVaga,
-                                  'Nome da vaga',
+                              Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40.0),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .override(
-                                      fontFamily: 'Inter Tight',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                child: Container(
+                                  width: 80.0,
+                                  height: 80.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (_model.resultQueryContratacaoByID
+                                                  ?.fotoUrl ==
+                                              null ||
+                                          _model.resultQueryContratacaoByID
+                                                  ?.fotoUrl ==
+                                              '')
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          child: Image.asset(
+                                            'assets/images/Imagem_do_WhatsApp_de_2024-11-04_(s)_16.26.23_57357408.jpg',
+                                            width: 80.0,
+                                            height: 80.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      if (_model.resultQueryContratacaoByID
+                                                  ?.fotoUrl !=
+                                              null &&
+                                          _model.resultQueryContratacaoByID
+                                                  ?.fotoUrl !=
+                                              '')
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          child: Image.network(
+                                            '${_model.resultQueryContratacaoByID?.fotoUrl}',
+                                            width: 80.0,
+                                            height: 80.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                              Text(
-                                'oferecido por  ${_model.empresaById?.nome}',
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      valueOrDefault<String>(
+                                        _model.resultQueryContratacaoByID
+                                            ?.nomeDaVaga,
+                                        'Nome da vaga',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily: 'Inter Tight',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    Text(
+                                      'oferecido por  ${_model.empresa?.nome}',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(height: 3.0)),
+                                ),
+                              ),
+                            ].divide(SizedBox(width: 16.0)),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              AutoSizeText(
+                                valueOrDefault<String>(
+                                  _model.resultQueryContratacaoByID
+                                      ?.descricaoDaVaga,
+                                  'Descrição da vaga',
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
-                            ].divide(SizedBox(height: 3.0)),
+                            ],
                           ),
-                        ),
-                      ].divide(SizedBox(width: 16.0)),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  if (loggedIn) {
+                                    _model.empresaById =
+                                        await queryEmpresasRecordOnce(
+                                      queryBuilder: (empresasRecord) =>
+                                          empresasRecord.where(
+                                        'empresaID',
+                                        isEqualTo: _model
+                                            .resultQueryContratacaoByID
+                                            ?.empresaID,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    await launchURL(
+                                        'https://wa.me/${(String phone) {
+                                      return phone
+                                          .replaceAll("-", "")
+                                          .split(" ")[1];
+                                    }(_model.empresaById!.telefone)}');
+                                  } else {
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('Atenção'),
+                                                  content: Text(
+                                                      'Você precisa estar logado para acessar essa função'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: Text('Cancelar'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child:
+                                                          Text('Ir para login'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      context.pushNamed(
+                                          LoginCadastroWidget.routeName);
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Ação cancelada',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                        ),
+                                      );
+                                    }
+                                  }
+
+                                  safeSetState(() {});
+                                },
+                                text: 'Chamar no Whatssapp',
+                                icon: FaIcon(
+                                  FontAwesomeIcons.whatsapp,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0x00FFFFFF),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: Color(0xFF25D366),
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF25D366),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ].divide(SizedBox(height: 10.0)),
+                          ),
+                        ].divide(SizedBox(height: 16.0)),
+                      ),
                     ),
+                  ),
+                ],
+              );
+            } else {
+              return Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        AutoSizeText(
-                          valueOrDefault<String>(
-                            _model.resultQueryContratacaoByID?.descricaoDaVaga,
-                            'Descrição da vaga',
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.15,
+                          height: MediaQuery.sizeOf(context).height * 0.075,
+                          child: custom_widgets.JarbasLoading(
+                            width: MediaQuery.sizeOf(context).width * 0.15,
+                            height: MediaQuery.sizeOf(context).height * 0.075,
+                            colorIndicator:
+                                FlutterFlowTheme.of(context).primary,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
                         ),
                       ],
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        FFButtonWidget(
-                          onPressed: () async {
-                            if (loggedIn) {
-                              _model.empresaById =
-                                  await queryEmpresasRecordOnce(
-                                queryBuilder: (empresasRecord) =>
-                                    empresasRecord.where(
-                                  'empresaID',
-                                  isEqualTo: _model
-                                      .resultQueryContratacaoByID?.empresaID,
-                                ),
-                                singleRecord: true,
-                              ).then((s) => s.firstOrNull);
-                              await launchURL('https://wa.me/${(String phone) {
-                                return phone.replaceAll("-", "").split(" ")[1];
-                              }(_model.empresaById!.telefone)}');
-                            } else {
-                              var confirmDialogResponse =
-                                  await showDialog<bool>(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Atenção'),
-                                            content: Text(
-                                                'Você precisa estar logado para acessar essa função'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: Text('Cancelar'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: Text('Ir para login'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ) ??
-                                      false;
-                              if (confirmDialogResponse) {
-                                context.pushNamed('LoginCadastro');
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Ação cancelada',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                      ),
-                                    ),
-                                    duration: Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                  ),
-                                );
-                              }
-                            }
-
-                            safeSetState(() {});
-                          },
-                          text: 'Chamar no Whatssapp',
-                          icon: FaIcon(
-                            FontAwesomeIcons.whatsapp,
-                            size: 15.0,
-                          ),
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x00FFFFFF),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Color(0xFF25D366),
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: Color(0xFF25D366),
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                        ),
-                      ].divide(SizedBox(height: 10.0)),
-                    ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ],
                 ),
-              ),
-            ),
-          ],
+              );
+            }
+          },
         ),
       ),
     );

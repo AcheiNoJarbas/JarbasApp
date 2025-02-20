@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -9,6 +10,9 @@ export 'onboardings_model.dart';
 
 class OnboardingsWidget extends StatefulWidget {
   const OnboardingsWidget({super.key});
+
+  static String routeName = 'Onboardings';
+  static String routePath = '/onboardings';
 
   @override
   State<OnboardingsWidget> createState() => _OnboardingsWidgetState();
@@ -335,7 +339,7 @@ class _OnboardingsWidgetState extends State<OnboardingsWidget> {
                     FFButtonWidget(
                       onPressed: () async {
                         if (_model.pageViewCurrentIndex == 2) {
-                          context.pushNamed('escolha');
+                          context.pushNamed(EscolhaWidget.routeName);
                         } else {
                           await _model.pageViewController?.nextPage(
                             duration: Duration(milliseconds: 300),

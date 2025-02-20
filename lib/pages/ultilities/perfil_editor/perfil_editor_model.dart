@@ -4,6 +4,7 @@ import '/golbal_components/forms/input_banner/input_banner_widget.dart';
 import '/golbal_components/forms/input_foto_circle/input_foto_circle_widget.dart';
 import '/golbal_components/forms/input_phone/input_phone_widget.dart';
 import '/golbal_components/forms/input_text/input_text_widget.dart';
+import '/index.dart';
 import 'perfil_editor_widget.dart' show PerfilEditorWidget;
 import 'package:flutter/material.dart';
 

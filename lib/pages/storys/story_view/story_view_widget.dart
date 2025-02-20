@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -17,6 +18,9 @@ class StoryViewWidget extends StatefulWidget {
   });
 
   final String? empresaID;
+
+  static String routeName = 'storyView';
+  static String routePath = '/storyView';
 
   @override
   State<StoryViewWidget> createState() => _StoryViewWidgetState();
@@ -42,7 +46,11 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
             )
             .where(
               'createdTime',
-              isEqualTo: dateTimeFormat("dd/MM/yyyy", getCurrentTimestamp),
+              isEqualTo: dateTimeFormat(
+                "dd/MM/yyyy",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ),
             ),
       );
       _model.reload = true;
@@ -142,7 +150,7 @@ class _StoryViewWidgetState extends State<StoryViewWidget> {
                                 context.pop();
                               }
                               context.pushNamed(
-                                'DetalhesEmpresa',
+                                DetalhesEmpresaWidget.routeName,
                                 queryParameters: {
                                   'empresaID': serializeParam(
                                     widget.empresaID,

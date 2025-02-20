@@ -7,8 +7,9 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -85,23 +86,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
         ),
         FFRoute(
-          name: 'Home',
-          path: '/home',
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
           builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
-          name: 'escolha',
-          path: '/escolha',
+          name: EscolhaWidget.routeName,
+          path: EscolhaWidget.routePath,
           builder: (context, params) => EscolhaWidget(),
         ),
         FFRoute(
-          name: 'listCategoriaToEstabelecimentos',
-          path: '/listCategoriaToEstabelecimentos',
+          name: ListCategoriaToEstabelecimentosWidget.routeName,
+          path: ListCategoriaToEstabelecimentosWidget.routePath,
           builder: (context, params) => ListCategoriaToEstabelecimentosWidget(),
         ),
         FFRoute(
-          name: 'DetalhesEmpresa',
-          path: '/detalhesEmpresa',
+          name: DetalhesEmpresaWidget.routeName,
+          path: DetalhesEmpresaWidget.routePath,
           builder: (context, params) => DetalhesEmpresaWidget(
             empresaID: params.getParam(
               'empresaID',
@@ -110,28 +111,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'favoritos',
-          path: '/favoritos',
+          name: FavoritosWidget.routeName,
+          path: FavoritosWidget.routePath,
           builder: (context, params) => FavoritosWidget(),
         ),
         FFRoute(
-          name: 'Onboardings',
-          path: '/onboardings',
+          name: OnboardingsWidget.routeName,
+          path: OnboardingsWidget.routePath,
           builder: (context, params) => OnboardingsWidget(),
         ),
         FFRoute(
-          name: 'SejaContratado',
-          path: '/sejaContratado',
+          name: SejaContratadoWidget.routeName,
+          path: SejaContratadoWidget.routePath,
           builder: (context, params) => SejaContratadoWidget(),
         ),
         FFRoute(
-          name: 'listContratacoes',
-          path: '/listContratacoes',
+          name: ListContratacoesWidget.routeName,
+          path: ListContratacoesWidget.routePath,
           builder: (context, params) => ListContratacoesWidget(),
         ),
         FFRoute(
-          name: 'DetalhesVaga',
-          path: '/detalhesVaga',
+          name: DetalhesVagaWidget.routeName,
+          path: DetalhesVagaWidget.routePath,
           builder: (context, params) => DetalhesVagaWidget(
             contratacaoID: params.getParam(
               'contratacaoID',
@@ -140,8 +141,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'ListLocalidades',
-          path: '/listLocalidades',
+          name: ListLocalidadesWidget.routeName,
+          path: ListLocalidadesWidget.routePath,
           builder: (context, params) => ListLocalidadesWidget(
             categoria: params.getParam(
               'categoria',
@@ -150,13 +151,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'manu',
-          path: '/manu',
+          name: ManuWidget.routeName,
+          path: ManuWidget.routePath,
           builder: (context, params) => ManuWidget(),
         ),
         FFRoute(
-          name: 'ListEstabelecimentos',
-          path: '/listEstabelecimentos',
+          name: ListEstabelecimentosWidget.routeName,
+          path: ListEstabelecimentosWidget.routePath,
           builder: (context, params) => ListEstabelecimentosWidget(
             categoria: params.getParam(
               'categoria',
@@ -169,18 +170,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'LoginCadastro',
-          path: '/loginCadastro',
+          name: LoginCadastroWidget.routeName,
+          path: LoginCadastroWidget.routePath,
           builder: (context, params) => LoginCadastroWidget(),
         ),
         FFRoute(
-          name: 'Inicio',
-          path: '/inicio',
+          name: InicioWidget.routeName,
+          path: InicioWidget.routePath,
           builder: (context, params) => InicioWidget(),
         ),
         FFRoute(
-          name: 'storyView',
-          path: '/storyView',
+          name: StoryViewWidget.routeName,
+          path: StoryViewWidget.routePath,
           builder: (context, params) => StoryViewWidget(
             empresaID: params.getParam(
               'empresaID',
@@ -189,13 +190,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'perfilEditor',
-          path: '/perfilEditor',
+          name: PerfilEditorWidget.routeName,
+          path: PerfilEditorWidget.routePath,
           builder: (context, params) => PerfilEditorWidget(),
         ),
         FFRoute(
-          name: 'PerfilDoUser',
-          path: '/perfilDoUser',
+          name: PerfilDoUserWidget.routeName,
+          path: PerfilDoUserWidget.routePath,
           builder: (context, params) => PerfilDoUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

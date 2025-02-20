@@ -10,6 +10,7 @@ import '/golbal_components/forms/input_phone/input_phone_widget.dart';
 import '/golbal_components/forms/input_text/input_text_widget.dart';
 import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'perfil_editor_model.dart';
@@ -17,6 +18,9 @@ export 'perfil_editor_model.dart';
 
 class PerfilEditorWidget extends StatefulWidget {
   const PerfilEditorWidget({super.key});
+
+  static String routeName = 'perfilEditor';
+  static String routePath = '/perfilEditor';
 
   @override
   State<PerfilEditorWidget> createState() => _PerfilEditorWidgetState();
@@ -97,7 +101,7 @@ class _PerfilEditorWidgetState extends State<PerfilEditorWidget> {
                           size: 30.0,
                         ),
                         onPressed: () async {
-                          context.pushNamed('PerfilDoUser');
+                          context.pushNamed(PerfilDoUserWidget.routeName);
                         },
                       ),
                       Text(

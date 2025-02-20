@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/golbal_components/buttons/jarbas_large_button/jarbas_large_button_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'seja_contratado_model.dart';
@@ -9,6 +10,9 @@ export 'seja_contratado_model.dart';
 
 class SejaContratadoWidget extends StatefulWidget {
   const SejaContratadoWidget({super.key});
+
+  static String routeName = 'SejaContratado';
+  static String routePath = '/sejaContratado';
 
   @override
   State<SejaContratadoWidget> createState() => _SejaContratadoWidgetState();
@@ -142,7 +146,8 @@ class _SejaContratadoWidgetState extends State<SejaContratadoWidget> {
                                   textButton:
                                       'Visualizar vagas em ${FFAppState().municipioSelected.nome}',
                                   buttonAction: () async {
-                                    context.pushNamed('listContratacoes');
+                                    context.pushNamed(
+                                        ListContratacoesWidget.routeName);
                                   },
                                 ),
                               ),

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,6 +15,9 @@ export 'escolha_model.dart';
 
 class EscolhaWidget extends StatefulWidget {
   const EscolhaWidget({super.key});
+
+  static String routeName = 'escolha';
+  static String routePath = '/escolha';
 
   @override
   State<EscolhaWidget> createState() => _EscolhaWidgetState();
@@ -546,7 +550,7 @@ class _EscolhaWidgetState extends State<EscolhaWidget>
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed(
-                      'Home',
+                      HomeWidget.routeName,
                       extra: <String, dynamic>{
                         kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,

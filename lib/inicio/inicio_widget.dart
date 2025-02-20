@@ -4,6 +4,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -13,6 +14,9 @@ export 'inicio_model.dart';
 
 class InicioWidget extends StatefulWidget {
   const InicioWidget({super.key});
+
+  static String routeName = 'Inicio';
+  static String routePath = '/inicio';
 
   @override
   State<InicioWidget> createState() => _InicioWidgetState();
@@ -42,10 +46,10 @@ class _InicioWidgetState extends State<InicioWidget>
           ),
         );
         if (_model.existMuncipio == 0) {
-          context.pushNamed('escolha');
+          context.pushNamed(EscolhaWidget.routeName);
         } else {
           context.pushNamed(
-            'Home',
+            HomeWidget.routeName,
             extra: <String, dynamic>{
               kTransitionInfoKey: TransitionInfo(
                 hasTransition: true,
@@ -58,7 +62,7 @@ class _InicioWidgetState extends State<InicioWidget>
         await Future.delayed(const Duration(milliseconds: 2000));
 
         context.pushNamed(
-          'Onboardings',
+          OnboardingsWidget.routeName,
           extra: <String, dynamic>{
             kTransitionInfoKey: TransitionInfo(
               hasTransition: true,

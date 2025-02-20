@@ -6,6 +6,7 @@ import '/golbal_components/cards/card_categoria/card_categoria_widget.dart';
 import '/golbal_components/forms/jarbas_search_bar/jarbas_search_bar_widget.dart';
 import '/golbal_components/list_stories/list_stories_widget.dart';
 import '/golbal_components/nav_bar/nav_bar_widget.dart';
+import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
+
+  static String routeName = 'Home';
+  static String routePath = '/home';
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
@@ -160,7 +164,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'DetalhesEmpresa',
+                                                DetalhesEmpresaWidget.routeName,
                                                 queryParameters: {
                                                   'empresaID': serializeParam(
                                                     itemDivulItem.empresaID,
@@ -348,7 +352,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: JarbasLargeButtonWidget(
                               textButton: 'CONTRATAÇÕES',
                               buttonAction: () async {
-                                context.pushNamed('listContratacoes');
+                                context.pushNamed(
+                                    ListContratacoesWidget.routeName);
                               },
                             ),
                           ),
@@ -476,7 +481,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           categoriaItem,
                                                       cardFunction: () async {
                                                         context.pushNamed(
-                                                          'ListLocalidades',
+                                                          ListLocalidadesWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'categoria':
                                                                 serializeParam(
@@ -572,7 +578,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             cardFunction:
                                                                 () async {
                                                               context.pushNamed(
-                                                                'ListLocalidades',
+                                                                ListLocalidadesWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'categoria':
